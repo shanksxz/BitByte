@@ -31,18 +31,15 @@ export const postUpvoteRelations = relations(postUpvotes, ({ one }) => ({
   }),
 }));
 
-export const commentUpvoteRelations = relations(
-  commentUpvotes,
-  ({ one }) => ({
-    post: one(comments, {
-      fields: [commentUpvotes.commentId],
-      references: [comments.id],
-      relationName: "commentUpvotes",
-    }),
-    user: one(users, {
-      fields: [commentUpvotes.userId],
-      references: [users.id],
-      relationName: "user",
-    }),
+export const commentUpvoteRelations = relations(commentUpvotes, ({ one }) => ({
+  post: one(comments, {
+    fields: [commentUpvotes.commentId],
+    references: [comments.id],
+    relationName: "commentUpvotes",
   }),
-);
+  user: one(users, {
+    fields: [commentUpvotes.userId],
+    references: [users.id],
+    relationName: "user",
+  }),
+}));

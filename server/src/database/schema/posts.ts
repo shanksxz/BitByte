@@ -6,7 +6,9 @@ import { postUpvotes } from "./upvotes";
 
 export const posts = sqliteTable("posts", {
   id: integer("id", { mode: "number" }).primaryKey({ autoIncrement: true }),
-  userId: integer("user_id").notNull().references(() => users.id),
+  userId: integer("user_id")
+    .notNull()
+    .references(() => users.id),
   title: text("title").notNull(),
   url: text("url"),
   content: text("content"),

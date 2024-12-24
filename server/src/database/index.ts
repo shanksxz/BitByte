@@ -1,6 +1,6 @@
-import { DrizzleD1Database, drizzle } from "drizzle-orm/d1";
-import { Context as HonoContext } from "hono";
-import { Context } from "../types";
+import { type DrizzleD1Database, drizzle } from "drizzle-orm/d1";
+import type { Context as HonoContext } from "hono";
+import type { Context } from "../types";
 import * as schema from "./schema";
 export type DrizzleDB = DrizzleD1Database<typeof schema>;
 
